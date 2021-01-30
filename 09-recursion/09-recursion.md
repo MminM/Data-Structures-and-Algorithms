@@ -75,6 +75,17 @@ function fibonacci(n) {
 
 #### 记忆法
 
+```javascript
+function fibonacciMemoization(n) {
+  const memo = [0, 1];
+  const fibonacci = (n) => {
+    if (memo[n] != null) return memo[n];
+    return (memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo));
+  };
+  return fibonacci;
+}
+```
+
 ### 4.其它
 
 - 为什么要用递归？它更快么？
